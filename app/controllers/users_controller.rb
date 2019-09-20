@@ -10,11 +10,11 @@ class UsersController < ApplicationController
 
   def search
     response = User.search_coincidence(params[:value])
-    html_example = render_to_string template: "users/template", locals: {sender: response}
+    html_example = render_to_string(template: "users/template", locals: {sender: response}, layout: false)
     #no imprimir el layout, buscar un metodo para evitarlo
     #render json es lo que debe mostrar y en formato json lo mando al javascript
     #con el byebug puedo ver como se esta imprimiendo actualmente el render to string
-    #byebug
+    byebug
     render html: "<h1>El correo del usuario encontrado es #{response[0].email} </h1>".html_safe
   end
 

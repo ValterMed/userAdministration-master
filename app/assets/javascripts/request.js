@@ -1,4 +1,3 @@
-
 function searchCoincidence () {
   event.preventDefault();
   let word = $(".search").val()
